@@ -9,5 +9,25 @@
 </head>
 <body>
 
+
+<script>
+    const params = new URLSearchParams(window.location.search);
+    const gameParam = params.get("game");
+
+    if (!gameParam) throw new Error("No game parameter provided in URL");
+
+    const jsonPath = `./${gameParam}.json`;
+
+    fetch(jsonPath).then(response => {
+        if (!response.ok) {
+            throw new Error(`Failed to load ${jsonPath}`);
+        }
+        return response.json();
+    }).then(data => {
+        document.title = data["Title"];
+    }).catch(err => {
+        console.error(err);
+    });
+</script>
 </body>
 </html>
