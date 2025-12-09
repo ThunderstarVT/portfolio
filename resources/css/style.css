@@ -13,6 +13,8 @@ body {
 
     border: solid 4px #000000;
     box-sizing: border-box;
+
+    color: #ffffff;
 }
 
 #main {
@@ -36,6 +38,12 @@ body {
 
     border: solid 4px #0080ff;
     box-sizing: border-box;
+}
+
+#main>.right>img {
+    width: 100%;
+
+    margin-top: 16px;
 }
 
 #description {
