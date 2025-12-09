@@ -5,9 +5,30 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Thunderstar's Portfolio</title>
+
+    <link rel="stylesheet" href="/resources/css/style.css">
 </head>
 <body>
+    <div id="top">
+        <!--Top bar with back button, might get search bar at some point-->
+    </div>
+
+    <div id="main">
+        <!--The main info (title, summary, thumbnail, links)-->
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+
+    <div id="description">
+        <!--Info going more in-depth-->
+    </div>
+
+    <hr>
+
+    <div id="gallery">
+        <!--The images go here-->
+    </div>
 
 
     <script>
@@ -24,7 +45,14 @@
             }
             return response.json();
         }).then(data => {
+            // set the title
             document.title = data["Title"];
+
+            // set summary with title
+            document.querySelector("#main>.left").innerHTML = `
+                <h1>${data["Title"]}</h1>
+                <p>${data["Summary"]}</p>
+            `;
         }).catch(err => {
             console.error(err);
         });
