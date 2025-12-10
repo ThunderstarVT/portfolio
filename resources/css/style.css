@@ -14,7 +14,7 @@ body {
     border: solid 4px #000000;
     box-sizing: border-box;
 
-    color: #ffffff;
+    background: #ffffff;
 }
 
 #main {
@@ -29,14 +29,12 @@ body {
 #main>.left {
     flex: 3;
 
-    border: solid 4px #ff8000;
     box-sizing: border-box;
 }
 
 #main>.right {
     flex: 2;
 
-    border: solid 4px #0080ff;
     box-sizing: border-box;
 }
 
@@ -56,4 +54,21 @@ body {
 
 hr {
     border: solid 2px #000000;
+}
+
+#gallery {
+    margin: 16px;
+
+    column-count: 2;
+    column-gap: 8px;
+}
+
+#gallery>img {
+    width: 100%;
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    break-inside: avoid;
 }

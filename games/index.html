@@ -24,7 +24,9 @@
         <!--Info going more in-depth-->
     </div>
 
-    <hr>
+    <div style="padding-left: 16px; padding-right: 16px;">
+        <hr>
+    </div>
 
     <div id="gallery">
         <!--The images go here-->
@@ -55,6 +57,16 @@
             `;
 
             // set thumbnail and links
+            let linkText = ``;
+
+            for (const [key, value] of Object.entries(data["Links"])) {
+                linkText += `
+                    <li>
+                        <a href="${value}">${key}</a>
+                    </li>
+                `;
+            }
+
             document.querySelector("#main>.right").innerHTML = `
                 <img src="/resources/images/${data["Thumbnail"]}.webp" alt="${data["Thumbnail"]}">
                 <p>
@@ -62,9 +74,34 @@
                         <li>
                             <a href="#gallery">Gallery</a>
                         </li>
+                        ${linkText}
                     </ul>
                 </p>
             `;
+
+            // set description things
+            let descriptionText = ``;
+
+            for (const [key, value] of Object.entries(data["Description"])) {
+                descriptionText += `
+                    <hr>
+                    <div>
+                        <h2>${key}</h2>
+                        <p>${value}</p>
+                    </div>
+                `;
+            }
+
+            document.querySelector("#description").innerHTML = descriptionText;
+
+            // set the images in the gallery
+            let galleryText = ``;
+
+            for (const name of data["Gallery"]) {
+                galleryText += `<img src="/resources/images/${name}.webp" alt="${name}">`;
+            }
+
+            document.querySelector("#gallery").innerHTML = galleryText;
         }).catch(err => {
             console.error(err);
         });
