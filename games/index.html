@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Thunderstar's Portfolio</title>
 
-    <link rel="stylesheet" href="/resources/css/style.css">
+    <link rel="stylesheet" href="../resources/css/style.css">
 </head>
 <body>
     <div id="top">
@@ -68,7 +68,7 @@
             }
 
             document.querySelector("#main>.right").innerHTML = `
-                <img src="/resources/images/${data["Thumbnail"]}.webp" alt="${data["Thumbnail"]}">
+                <img src="../resources/images/${data["Thumbnail"]}.webp" alt="${data["Thumbnail"]}">
                 <p>
                     <ul>
                         <li>
@@ -98,7 +98,7 @@
             let galleryText = ``;
 
             for (const name of data["Gallery"]) {
-                galleryText += `<img src="/resources/images/${name}.webp" alt="${name}">`;
+                galleryText += `<img src="../resources/images/${name}.webp" alt="${name}">`;
             }
 
             document.querySelector("#gallery").innerHTML = galleryText;
