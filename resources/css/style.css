@@ -42,8 +42,6 @@ body {
     width: 100%;
 
     margin-top: 16px;
-
-    border-radius: 8px;
 }
 
 #description {
@@ -73,6 +71,8 @@ hr {
     margin-bottom: 8px;
 
     break-inside: avoid;
+}
 
+img {
     border-radius: 8px;
 }
