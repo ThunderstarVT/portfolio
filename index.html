@@ -26,6 +26,8 @@
         </div>
     </div>
 
+    <div id="project-list"></div>
+
 
     <script>
         main();
@@ -51,6 +53,25 @@
                 document.querySelector("#featured").innerHTML += `
                     <div>
                         <a href="./games/?game=${data["Featured"][i]}">
+                            <img src="./resources/images/${project_data["Thumbnail"]}.webp" alt="">
+                            <span>${project_data["Title"]}</span>
+                        </a>
+                    </div>
+                `;
+            }
+
+            for (const project of data["All"]) {
+                const project_jsonPath = `./games/${project}.json`;
+
+                const project_response = await fetch(project_jsonPath);
+
+                if (!response.ok) console.error(new Error(`Failed to load ${project_jsonPath}`));
+
+                const project_data = await project_response.json();
+
+                document.querySelector("#project-list").innerHTML += `
+                    <div>
+                        <a href="./games/?game=${project}">
                             <img src="./resources/images/${project_data["Thumbnail"]}.webp" alt="">
                             <span>${project_data["Title"]}</span>
                         </a>

@@ -73,6 +73,8 @@ body {
     border-radius: 8px;
 
     box-sizing: border-box;
+
+    break-inside: avoid;
 }
 
 #featured>div>a {
@@ -127,8 +129,59 @@ hr {
     margin-bottom: 8px;
 
     break-inside: avoid;
+
+    box-sizing: border-box;
 }
 
 img {
     border-radius: 8px;
+}
+
+#project-list {
+    margin: 16px;
+
+    column-width: 256px;
+    column-gap: 8px;
+
+    max-width: 100%;
+    width: 100%;
+
+    box-sizing: border-box;
+}
+
+#project-list>div {
+    border: solid 4px #000000;
+    border-radius: 8px;
+    box-sizing: border-box;
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    break-inside: avoid;
+}
+
+#project-list>div>a {
+    color: #000000;
+}
+
+#project-list>div>a>img {
+    width: 100%;
+
+    border-radius: 0px;
+
+    display: block;
+}
+
+#project-list>div>a>span {
+    display: block;
+
+    text-align: center;
+    font-size: clamp(12px, 3vw, 32px);
+
+    width: 100%;
+
+    padding: 4px;
+
+    box-sizing: border-box;
 }
