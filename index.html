@@ -16,6 +16,48 @@
 
     <div id="main">
         <!--The main info (title, summary, thumbnail, links)-->
+        <div class="left">
+            <div id="featured"></div>
+            <h1>About Me</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusamus alias aspernatur consequuntur cum cupiditate doloribus exercitationem hic ipsam minus molestiae natus, numquam provident quae quaerat quisquam, reiciendis sunt, unde.</p>
+        </div>
+        <div class="right">
+            <img src="./resources/images/profile.webp" alt="profile" style="border-radius: 100%; border: solid 4px #000000; box-sizing: border-box;">
+        </div>
     </div>
+
+
+    <script>
+        const jsonPath = `./projects.json`;
+
+        fetch(jsonPath).then(response => {
+            if (!response.ok) {
+                throw new Error(`Failed to load ${jsonPath}`);
+            }
+            return response.json();
+        }).then(data => {
+            for (let i = 0; i < 3 && i < data["Featured"].length; i++) {
+                fetch(`./games/${data["Featured"][i]}.json`).then(response => {
+                    if (!response.ok) {
+                        throw new Error(`Failed to load ${jsonPath}`);
+                    }
+                    return response.json();
+                }).then(project_data => {
+                    document.querySelector("#featured").innerHTML += `
+                        <div>
+                            <a href="./games/?game=${data["Featured"][i]}">
+                                <img src="./resources/images/${project_data["Thumbnail"]}.webp" alt="">
+                                <span>${project_data["Title"]}</span>
+                            </a>
+                        </div>
+                    `;
+                }).catch(err => {
+                    console.error(err);
+                });
+            }
+        }).catch(err => {
+            console.error(err);
+        });
+    </script>
 </body>
 </html>

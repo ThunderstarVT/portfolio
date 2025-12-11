@@ -61,6 +61,45 @@ body {
     margin-top: 16px;
 }
 
+#featured {
+    margin-top: 16px;
+
+    column-count: 3;
+    column-gap: 8px;
+}
+
+#featured>div {
+    border: solid 4px #000000;
+    border-radius: 8px;
+
+    box-sizing: border-box;
+}
+
+#featured>div>a {
+    color: #000000;
+}
+
+#featured>div>a>img {
+    width: 100%;
+
+    border-radius: 0px;
+
+    display: block;
+}
+
+#featured>div>a>span {
+    display: block;
+
+    text-align: center;
+    font-size: clamp(12px, 3vw, 32px);
+
+    width: 100%;
+
+    padding: 4px;
+
+    box-sizing: border-box;
+}
+
 #description {
     margin: 16px;
 }
