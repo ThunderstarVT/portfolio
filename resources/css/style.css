@@ -63,7 +63,7 @@ hr {
     column-gap: 8px;
 }
 
-#gallery>img {
+#gallery img {
     width: 100%;
 
     display: block;

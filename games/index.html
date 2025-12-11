@@ -98,7 +98,8 @@
             let galleryText = ``;
 
             for (const name of data["Gallery"]) {
-                galleryText += `<img src="../resources/images/${name}.webp" alt="${name}">`;
+                const src = `../resources/images/${name}.webp`;
+                galleryText += `<a href="${src}" target="_blank"><img src="${src}" alt="${name}"></a>`;
             }
 
             document.querySelector("#gallery").innerHTML = galleryText;
