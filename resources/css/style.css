@@ -59,7 +59,7 @@ hr {
 #gallery {
     margin: 16px;
 
-    column-count: 2;
+    column-width: 384px;
     column-gap: 8px;
 }
 
