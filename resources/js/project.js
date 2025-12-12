@@ -1,3 +1,5 @@
+let root = '../';
+
 main();
 
 async function main() {

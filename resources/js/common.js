@@ -1,3 +1,19 @@
+let isDarkMode = localStorage.getItem("isDarkMode");
+
+if (!isDarkMode) isDarkMode = false;
+
+document.querySelector('link[rel="stylesheet"]').href = isDarkMode ? `${root}resources/css/style_dark.css` : `${root}resources/css/style.css`;
+
+
+function toggleDarkMode() {
+    isDarkMode = !isDarkMode;
+
+    localStorage.setItem("isDarkMode", isDarkMode);
+
+    document.querySelector('link[rel="stylesheet"]').href = isDarkMode ? `${root}resources/css/style_dark.css` : `${root}resources/css/style.css`;
+}
+
+
 function getShortestColumn(query) {
     const columns = document.querySelectorAll(`${query}>.column`);
 

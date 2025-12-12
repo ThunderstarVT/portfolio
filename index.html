@@ -11,7 +11,10 @@
 </head>
 <body>
     <div id="top">
-        <!--Top bar with back button, might get search bar at some point-->
+        <!--Top bar, might get search bar at some point-->
+        <div><a href="#" onclick="toggleDarkMode();">
+            Dark Mode
+        </a></div>
     </div>
 
     <div id="main">
@@ -22,13 +25,13 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusamus alias aspernatur consequuntur cum cupiditate doloribus exercitationem hic ipsam minus molestiae natus, numquam provident quae quaerat quisquam, reiciendis sunt, unde.</p>
         </div>
         <div class="right">
-            <img src="./resources/images/profile.webp" alt="profile" style="border-radius: 100%; border: solid 4px #000000; box-sizing: border-box;">
+            <img src="./resources/images/profile.webp" alt="profile" class="profile">
         </div>
     </div>
 
     <div id="project-list"></div>
 
-    <script src="./resources/js/common.js"></script>
     <script src="./resources/js/home.js"></script>
+    <script src="./resources/js/common.js"></script>
 </body>
 </html>
