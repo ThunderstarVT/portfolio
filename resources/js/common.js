@@ -1,6 +1,4 @@
-let isDarkMode = localStorage.getItem("isDarkMode");
-
-if (!isDarkMode) isDarkMode = false;
+let isDarkMode = localStorage.getItem("isDarkMode") == 'true';
 
 document.querySelector('link[rel="stylesheet"]').href = isDarkMode == true ? `${root}resources/css/style_dark.css` : `${root}resources/css/style.css`;
 
