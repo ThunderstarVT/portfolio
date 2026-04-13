@@ -1,16 +1,19 @@
 {
   "Title": "Mora Simulator",
-  "Thumbnail": "placeholder_short",
-  "Summary": "",
+  "Thumbnail": "mora-simulator/thumbnail",
+  "Summary": "<b>Mora Simulator</b> is a chaotic sandbox game developed in <b>Unity (C#)</b> for the VTuber <a href=\"https://www.twitch.tv/moramunch\">MoraMunch</a>, heavily inspired by the physics-driven gameplay of Goat Simulator. As the sole programmer I built a range of systems - from an implementation of Wave Function Collapse procedural generation to a custom physics system that makes explosions and buoyancy simpler. This project was made in collaboration with Devo, an artist friend of mine from the USA.",
   "Links": {
     "GitHub": "https://github.com/ThunderstarVT/Mora-Simulator",
     "Itch": "https://thunderstar-vt.itch.io/mora-simulator"
   },
   "Description": {
-    "Header1": "Body1",
-    "Header2": "Body2"
+    "Backrooms Generator (Wave Function Collapse)": "I implemented a real-time procedural Backrooms generator unsing a constraint-based approach based on Wave Function Collapse. Instead of generating a full map upfront, th system continuously generates and removes tiles around the player using a coroutine-driven streaming model.<br><br>Tiles are defined as prefabs with edge signatures, and valid adjacency is resolved through a constraint map. Each tile variant is expanded into all 4 rotations at runtime, allowing reuse of assets while maintaining valid edge matching. During generation, positions are selected based on lowest entropy (fewest valid tiles), and a weighted random selection is applied to introduce controlled variation.<br><br>The system maintains a custom dictionary-backed grid structure with event hooks (<code>onAdd</code> and <code>onRemove</code>) to handle GameObject instantiation and cleanup. Generation expands outward by enqueueing valid neighboring positions based on tile edge data, rather than relying on a fixed grid.<br><br>To support performance, tiles are only generated within a configurable distance from the player and removed when outside that area, effectively creating an infinite environment. Importantly, unloaded tiles are not preserved - when revisiting an area, it can regenerate into a different valid configuration. This intentionally breaks spacial consistency, creating a non-Euclidean, disorienting effect that closely matches the unpredictable nature of the Backrooms.<br><br>(I think I put to much effort into something that is just an easter egg... well, easter eggs are like most of this kind of game so I guess it's fine)",
+    "Physics System - Physics Object": "I developed a base <code>PhysicsObject</code> system using Unity's <code>Rigidbody</code> component that standardizes interactions across all dynamic entities. It supports buoyancy (called on every <code>PhysicsObject</code> every <code>FixedUpdate</code> on a custom <code>PhysicsFluid</code>, of course checking if any of its colliders overlaps the fluid's bounds), explosions (called from a custom <code>Explosion</code> before it deletes itself), and collision-based responses. Objects dispatch events such as <code>OnKickedEvent</code>, <code>OnExplosionEvent</code>, and <code>OnCollisionEnterEvent</code>, which are subscribed to by a method to play sound on collisions and by other scripts. For example, <code>DestructibleObject</code> subscribes to all three events and invokes its <code>OnBreakEvent</code> if the impulse exceeds a threshold that can be set in the inspector - allowing for behaviors like explosive cylinders detonating when they receive a sufficiently powerful impact.",
+    "Physics System - Ragdoll": "<code>Ragdoll</code> extends <code>PhysicsObject</code>, it is modified to support segmented ragdoll objects composed of multiple objects with the custom <code>RagdollBone</code> component. Physics are applied per bone, allowing for less rigid character movement in response to for example explosions. It includes a system to toggle between enabled (physics-driven) and disabled (animation-driven).",
+    "Physics System - Flammable": "I made a custom <code>Flammable</code> component that allows objects to ignite, burn for a certain amount of ticks (1 tick = 0.5 seconds), and spread fire other objects with the <code>Flammable</code> component if they are close enough. When it stops burning it invokes an <code>OnBurnEnd</code> event. This event can be used to for example swap a wooden crate for a burnt one or to detonate explosive cylinders.",
+    "Physics System - IEdible": "I made an <code>IEdible</code> interface (<code>public bool CanEat()</code>, <code>public void Eat()</code>). This lets the player eat for example the \"nuclear taco\" to cause a huge explosion or a dead NPC to turn them into an egg. (NPC → egg was not my idea, but I was asked to make that so I did)"
   },
   "Gallery": [
-
+    "mora-simulator/backrooms1"
   ]
 }

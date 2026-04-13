@@ -3,6 +3,10 @@ body {
     padding-top: 64px;
 }
 
+code {
+    background: #80808040;
+}
+
 #top {
     position: fixed;
 

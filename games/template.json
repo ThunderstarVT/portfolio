@@ -1,7 +1,7 @@
 {
   "Title": "Template",
   "Thumbnail": "placeholder_short",
-  "Summary": "<b>Lorem ipsum</b> dolor sit amet, consectetur adipisicing elit. A aspernatur dignissimos dolor eius eligendi ex exercitationem inventore necessitatibus suscipit voluptates! Alias facilis fugiat harum magnam maiores numquam ratione saepe! Tempore!",
+  "Summary": "<b>Lorem ipsum</b> dolor sit amet, consectetur adipisicing elit.",
   "Links": {
     "test": "https://github.com/ThunderstarVT/portfolio"
   },
@@ -11,10 +11,6 @@
   },
   "Gallery": [
     "placeholder_short",
-    "placeholder",
-    "placeholder",
-    "placeholder_short",
-    "placeholder",
     "placeholder"
   ]
 }
