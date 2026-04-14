@@ -1,7 +1,7 @@
 {
   "Title": "Mora Simulator",
   "Thumbnail": "mora-simulator/thumbnail",
-  "Summary": "<b>Mora Simulator</b> is a chaotic sandbox game developed in <b>Unity (C#)</b> for the VTuber <a href=\"https://www.twitch.tv/moramunch\">MoraMunch</a>, heavily inspired by the physics-driven gameplay of Goat Simulator. As the sole programmer I built a range of systems - from an implementation of Wave Function Collapse procedural generation to a custom physics system that makes explosions and buoyancy simpler. This project was made in collaboration with Devo, an artist friend of mine from the USA.",
+  "Summary": "<b>Mora Simulator</b> is a chaotic sandbox game developed in <b>Unity (C#)</b> for the VTuber <a href=\"https://www.twitch.tv/moramunch\" target=\"_blank\">MoraMunch</a>, heavily inspired by the physics-driven gameplay of Goat Simulator. As the sole programmer I built a range of systems - from an implementation of Wave Function Collapse procedural generation to a custom physics system that makes explosions and buoyancy simpler. This project was made in collaboration with Devo, an artist friend of mine from the USA.",
   "Links": {
     "GitHub": "https://github.com/ThunderstarVT/Mora-Simulator",
     "Itch": "https://thunderstar-vt.itch.io/mora-simulator"
