@@ -14,6 +14,12 @@
     "Physics System - IEdible": "I made an <code>IEdible</code> interface (<code>public bool CanEat()</code>, <code>public void Eat()</code>). This lets the player eat for example the \"nuclear taco\" to cause a huge explosion or a dead NPC to turn them into an egg. (NPC → egg was not my idea, but I was asked to make that so I did)"
   },
   "Gallery": [
+    "mora-simulator/title-screen1",
+    "mora-simulator/crates",
+    "mora-simulator/eggs-and-nuclear-taco",
+    "mora-simulator/explosive-cylinder",
+    "mora-simulator/water1",
+    "mora-simulator/water2",
     "mora-simulator/backrooms1"
   ]
 }
