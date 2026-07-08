@@ -1,9 +1,11 @@
 {
   "Featured": [
     "arpagis",
+    "seadog-scuffle",
     "mora-simulator"
   ],
   "All": [
+    "seadog-scuffle",
     "arpagis",
     "mora-simulator"
   ]
